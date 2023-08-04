@@ -47,6 +47,8 @@ public class App {
 
 		//Punto 13
 		//Punto 14
+		app.getPerfecto();
+
 		//Punto 15
 		app.getNumeroCapicua();
 
