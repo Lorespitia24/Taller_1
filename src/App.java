@@ -288,6 +288,22 @@ public class App {
 		verifique si es un número perfecto. Un número perfecto es aquel cuya suma
 		de sus divisores propios (excluyendo al propio número) es igual al número. */
 
+        public void getPerfecto(){
+            String input_numero = JOptionPane.showInputDialog("Ingresa un numero:");
+            int suma = 0;
+                for(int i = 1 ; i < Integer.parseInt(input_numero) ; i++){
+                    if(Integer.parseInt(input_numero) % i == 0){
+                        suma += i;
+                    }
+                 }
+
+                 if (suma == Integer.parseInt(input_numero)) {
+                    JOptionPane.showMessageDialog(null, (input_numero + " Es un numero perfecto"));  
+                 } else {
+                    JOptionPane.showMessageDialog(null, (input_numero + " No es un numero perfecto"));  
+                 }
+        }
+
 		/* 15.Crea un programa que pida al usuario un número entero y determine si es un
 		número capicúa. Un número capicúa es aquel que se lee igual de izquierda a
 		derecha que de derecha a izquierda. */
