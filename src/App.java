@@ -59,6 +59,8 @@ public class App {
 		app.getImprimirPrimo();
 		
 		//Punto 18
+		app.getContrasenaAleatoria();
+
 		//Punto 19
 		app.getNombreMayusculaMinuscula();
 
@@ -363,10 +365,35 @@ public class App {
 			}
 			JOptionPane.showMessageDialog(null, ("Numeros Primos: " + numerosPrimo));  
 		}
-		/* 18.Crea un programa que genere una contraseña aleatoria de 8 caracteres que
+
+       	/* 18.Crea un programa que genere una contraseña aleatoria de 8 caracteres que
 		contenga letras mayúsculas, letras minúsculas y dígitos. Puedes utilizar la
 		clase Math para generar números aleatorios y la clase String para manipular
 		la contraseña. */
+
+		public void getContrasenaAleatoria(){
+			String contrasena = "";
+			String contrasenaFinal = "";
+			Random random = new Random();
+			while (contrasena.length() < 8) {
+				contrasena += generar();
+			}
+			for (int i = 0; i < 8; i++) {
+				int numeroAleatorio = random.nextInt(8);
+				contrasenaFinal += "" + contrasena.charAt(numeroAleatorio);
+			}
+			JOptionPane.showMessageDialog(null, ("Contraseña Aleatoria: " + contrasenaFinal)); 
+			
+		}
+
+		public String generar(){
+			Random random = new Random();
+			int numeroAleatorio = random.nextInt(10);
+			int letraMayuscula = (int)(Math.random()*((90-65)+1)+65);
+			int letraMinuscula = (int)(Math.random()*((122-97)+1)+97);
+			String contrasena = "";
+			return contrasena += (char)letraMayuscula +""+ numeroAleatorio +""+ (char)letraMinuscula;
+		}
 
 		/* 19.Escribe un programa que solicite al usuario su nombre y luego lo imprima en
 		mayúsculas y minúsculas */
