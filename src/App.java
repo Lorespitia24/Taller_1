@@ -567,10 +567,10 @@ public class App {
 
 		public void getQuitarRepetidos(){
 			int []arreglo_numeros = {40,90,21,5,60,91,91,40,9};
-			
-			String contarElemento = "";
+			String contarElemento = "", arrayInicial="";
 	
 			for (int i = 0; i < arreglo_numeros.length; i++) {
+				arrayInicial += arreglo_numeros[i] + " ";
 				if (!contarElemento.toUpperCase().contains(String.valueOf(arreglo_numeros[i]) )) {
 					  contarElemento += arreglo_numeros[i] +" ";   
 				} 
@@ -582,7 +582,7 @@ public class App {
 				System.out.println(arreglo_final[i]);
 			}
 	
-			JOptionPane.showMessageDialog(null, ("La letra: "+"\n" + contarElemento.toString())); 
+			JOptionPane.showMessageDialog(null, ("Array Inicial: "+"\n" +arrayInicial+"\nArray Final: "+"\n" + contarElemento.toString())); 
 			
 		} 
 	
