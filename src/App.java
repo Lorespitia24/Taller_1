@@ -100,7 +100,9 @@ public class App {
 		app.getQuitarRepetidos();
 		
 		//Punto 31
-		//Punto 32
+		app.getOrdenarSeleccion();
+
+		//Punto 32 
 		app.getNumeroArreglo();
 
 		//Punto 33
@@ -588,6 +590,38 @@ public class App {
 		/* 31.Ordenar elementos: Implementa un algoritmo de ordenamiento (por ejemplo,
 		el algoritmo de burbuja o el de selección) para ordenar un arreglo de enteros
 		de manera ascendente. */
+
+		public void getOrdenarSeleccion(){
+			int []arreglo_numeros = {40,90,21,5,60,91,91,40,9};
+			String arregloInicial = "", arregloFinal = "";
+			int menor, posicion, auxiliar;
+	
+			for (int i : arreglo_numeros) {
+				arregloInicial += i + " ";
+				System.out.println(i);
+			  }
+			  for (int i = 0; i < arreglo_numeros.length - 1; i++) {      
+					menor = arreglo_numeros[i];                                        
+					posicion = i;                            
+					for (int j = i + 1; j < arreglo_numeros.length; j++){ 
+						  if (arreglo_numeros[j] < menor) {          
+							  menor = arreglo_numeros[j];             
+							  posicion = j;
+						  }
+					}
+					if (posicion != i){                               
+						auxiliar = arreglo_numeros[i];
+						arreglo_numeros[i] = arreglo_numeros[posicion];
+						arreglo_numeros[posicion] = auxiliar;
+					}
+			  }
+	
+			  for (int i : arreglo_numeros) {
+				arregloFinal += i + " ";
+				System.out.println(i);
+			  }
+			JOptionPane.showMessageDialog(null, ("Arreglo Inicial: " + arregloInicial + "\n Arreglo Ordenado: " + arregloFinal));
+		} 
 
 		/* 32.Buscar un elemento: Escribe un programa que busque un número específico
 		en un arreglo y muestre su índice (o un mensaje si no se encuentra). */
