@@ -565,24 +565,19 @@ public class App {
 		/* 30.Eliminar duplicados: Diseña un programa que elimine los elementos
 		duplicados de un arreglo. */
 
-		public void getQuitarRepetidos(){
+	    public void getQuitarRepetidos(){
 			int []arreglo_numeros = {40,90,21,5,60,91,91,40,9};
-			String contarElemento = "", arrayInicial="";
+			String contarElemento = "";
 	
 			for (int i = 0; i < arreglo_numeros.length; i++) {
-				arrayInicial += arreglo_numeros[i] + " ";
 				if (!contarElemento.toUpperCase().contains(String.valueOf(arreglo_numeros[i]) )) {
 					  contarElemento += arreglo_numeros[i] +" ";   
 				} 
 						
 			}
 			String []arreglo_final = contarElemento.split(" ");
-			
-			for (int i = 0; i < arreglo_final.length; i++) {
-				System.out.println(arreglo_final[i]);
-			}
 	
-			JOptionPane.showMessageDialog(null, ("Array Inicial: "+"\n" +arrayInicial+"\nArray Final: "+"\n" + contarElemento.toString())); 
+			JOptionPane.showMessageDialog(null, ("Array Inicial: "+"\n" +Arrays.toString(arreglo_numeros)+"\nArray Final: "+"\n" + Arrays.toString(arreglo_final))); 
 			
 		} 
 	
@@ -704,13 +699,9 @@ public class App {
 		
 
 			String []arrerglo_final = datosfinales.split(" ");
-			datosIniciales = "";
-			for (int i = 0; i < arrerglo_final.length; i++) {
-				datosIniciales += arreglo_numeros[i] + " ";
-				System.out.println(arrerglo_final[i]);
-			}
-			JOptionPane.showMessageDialog(null, "Arreglo inicial \n " + datosIniciales + "\n Arreglo Final \n " + datosfinales);
-		   }
+
+			JOptionPane.showMessageDialog(null, "Arreglo inicial \n " + Arrays.toString(arreglo_numeros) + "\n Arreglo Final \n " + Arrays.toString(arrerglo_final));
+		   } 
 
 		/* 35.Tabla de multiplicar: Crea un programa que imprima las tablas de multiplicar
 		del 1 al 10. Usa para esto una matriz */
