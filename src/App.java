@@ -673,22 +673,36 @@ public class App {
 		un arreglo hacia la izquierda o la derecha una cierta cantidad de posiciones. */
 
 		public void getRotarElementos(){
-			String input_numero = JOptionPane.showInputDialog("Ingresa el numero de veces para rotar:");
 			int []arreglo_numeros = {40,90,21,5,60};
+			String input_numero = JOptionPane.showInputDialog("Ingresa el numero de veces para rotar:");
+			String input_lado = JOptionPane.showInputDialog("Ingresa I si quiere rotar a la izquierda, /n Ingresa D si quiere rotar a la derecha:");
 			String datosIniciales = "";
 			String datosfinales ="";
 		
 			int numeroRota = Integer.parseInt(input_numero);
-		 
-			  for (int i = 0; i < numeroRota; i++) {
-				datosIniciales += arreglo_numeros[i] +" ";
-			  }
-			  
-			  for (int i = numeroRota; i < arreglo_numeros.length; i++) {
-				  datosfinales += arreglo_numeros[i] + " ";
-			}
+
+            if (input_lado.equalsIgnoreCase("D")) {
+                
+                for (int i = 0; i < numeroRota; i++) {
+                  datosIniciales += arreglo_numeros[i] +" ";
+                }
+                
+                for (int i = numeroRota; i < arreglo_numeros.length; i++) {
+                    datosfinales += arreglo_numeros[i] + " ";
+              }
+            } else  if (input_lado.equalsIgnoreCase("I")) {
+                
+                for (int i = arreglo_numeros.length-numeroRota; i < arreglo_numeros.length; i++) {
+                    datosfinales += arreglo_numeros[i] +" ";
+                }
+                for (int i = 0; i < arreglo_numeros.length-numeroRota; i++) {
+                    datosIniciales += arreglo_numeros[i] + " ";
+                } 
+            }
+            datosfinales += datosIniciales;
+            
 		
-			datosfinales += datosIniciales;
+
 			String []arrerglo_final = datosfinales.split(" ");
 			datosIniciales = "";
 			for (int i = 0; i < arrerglo_final.length; i++) {
