@@ -68,6 +68,8 @@ public class App {
 		app.getPalabraInvertida();
 
 		//Punto 21
+		app.getBuscarLetra();
+		
 		//Punto 22
 		app.getFrasePolindromo();
 
@@ -414,6 +416,37 @@ public class App {
 		}
 		/* 21.Pide al usuario una cadena y muestra cuántas veces aparece una letra
 		específica en ella */
+
+		public void getBuscarLetra(){
+			String frase = JOptionPane.showInputDialog("Ingresa una frace:");
+			String letraBuscar = JOptionPane.showInputDialog("Ingresa la letra que quiere saber cuantas veces se repite :");
+			String contarLetras = "";
+			int contador = 0;
+	
+			for (int i = 0; i < frase.length(); i++) {
+				contador = 0;
+				for (int j = 0; j < frase.length(); j++) {
+					if ( String.valueOf(frase.charAt(i)).equalsIgnoreCase(String.valueOf(frase.charAt(j)))) {
+						contador++;
+					}
+					
+				}
+				if (!contarLetras.toUpperCase().contains(String.valueOf(frase.charAt(i)).toUpperCase()) ) {
+					
+					  contarLetras += frase.charAt(i) +" = "+contador +"\n";
+					  if (contarLetras.toUpperCase().contains(letraBuscar.toUpperCase()) ) {
+						   
+							 contarLetras = frase.charAt(i) +" = "+contador +"\n";
+							 break;
+					   } 
+				} 
+						
+			}
+	
+			JOptionPane.showMessageDialog(null, ("La letra: "+"\n" + contarLetras.toString() + "veces")); 
+			
+		} 
+	
 
 		/* 22.Escribe un programa que solicite al usuario una frase y verifique si es un
 		palíndromo (se lee igual de izquierda a derecha que de derecha a izquierda) */
