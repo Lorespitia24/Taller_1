@@ -46,7 +46,9 @@ public class App {
 		app.getNumerosPrimos();
 
 		//Punto 13
-		//Punto 14
+		app.getDecimales();
+
+		//Punto 14 
 		app.getPerfecto();
 
 		//Punto 15
@@ -295,6 +297,15 @@ public class App {
 		
 		/* 	13.Pide al usuario un número decimal y muestra su valor redondeado a un
 		número específico de decimales */
+
+		public void getDecimales(){
+			String input_numero = JOptionPane.showInputDialog("Ingresa un numero decimal:");
+			String input_decimales = JOptionPane.showInputDialog("Ingresa la cantidad de decimales a mostrar:");
+			input_numero = input_numero.replace(",", "."); 
+			double numeroFinal = Math.round(Double.parseDouble(input_numero) * Math.pow(10, Integer.parseInt(input_decimales))) / Math.pow(10, Integer.parseInt(input_decimales)) ;
+	
+			JOptionPane.showMessageDialog(null, ("Numero Inicia: " + input_numero + "\n Numero Final: " + numeroFinal));
+		}
 
 		/* 14.Escribe un programa que solicite al usuario un número entero positivo y
 		verifique si es un número perfecto. Un número perfecto es aquel cuya suma
