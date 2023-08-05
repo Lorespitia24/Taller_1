@@ -69,7 +69,7 @@ public class App {
 
 		//Punto 21
 		app.getBuscarLetra();
-		
+
 		//Punto 22
 		app.getFrasePolindromo();
 
@@ -95,11 +95,15 @@ public class App {
 		app.getMaximoArreglo();
 
 		//Punto 30
+		app.getQuitarRepetidos();
+		
 		//Punto 31
 		//Punto 32
 		app.getNumeroArreglo();
 
 		//Punto 33
+		app.getFrecuenciaElemento();
+
 		//Punto 34
 		//Punto 35
 		app.getTablasMultiplicar();
@@ -545,6 +549,29 @@ public class App {
 		}
 		/* 30.Eliminar duplicados: Diseña un programa que elimine los elementos
 		duplicados de un arreglo. */
+
+		public void getQuitarRepetidos(){
+			int []arreglo_numeros = {40,90,21,5,60,91,91,40,9};
+			
+			String contarElemento = "";
+	
+			for (int i = 0; i < arreglo_numeros.length; i++) {
+				if (!contarElemento.toUpperCase().contains(String.valueOf(arreglo_numeros[i]) )) {
+					  contarElemento += arreglo_numeros[i] +" ";   
+				} 
+						
+			}
+			String []arreglo_final = contarElemento.split(" ");
+			
+			for (int i = 0; i < arreglo_final.length; i++) {
+				System.out.println(arreglo_final[i]);
+			}
+	
+			JOptionPane.showMessageDialog(null, ("La letra: "+"\n" + contarElemento.toString())); 
+			
+		} 
+	
+
 		/* 31.Ordenar elementos: Implementa un algoritmo de ordenamiento (por ejemplo,
 		el algoritmo de burbuja o el de selección) para ordenar un arreglo de enteros
 		de manera ascendente. */
@@ -570,6 +597,30 @@ public class App {
 		}
 		/* 33.Frecuencia de elementos: Escribe un programa que cuente la frecuencia de
 		cada elemento en un arreglo. */
+
+		public void getFrecuenciaElemento(){
+			int []arreglo_numeros = {40,90,21,5,60,91,91,40,9};;
+			String contarElemento = "";
+			int contador = 0;
+	
+			for (int i = 0; i < arreglo_numeros.length; i++) {
+				contador = 0;
+				for (int j = 0; j < arreglo_numeros.length; j++) {
+					if ( arreglo_numeros[i] == arreglo_numeros[j]) {
+						contador++;
+					}
+					
+				}
+				if (!contarElemento.toUpperCase().contains(String.valueOf(arreglo_numeros[i]) )) {
+					
+					  contarElemento += arreglo_numeros[i] +" esta "+contador +"\n";
+				} 
+						
+			}
+	
+			JOptionPane.showMessageDialog(null, ("La letra: "+"\n" + contarElemento.toString() + "veces")); 
+			
+		} 
 
 		/* 34.Rotación de elementos: Implementa un programa que rote los elementos de
 		un arreglo hacia la izquierda o la derecha una cierta cantidad de posiciones. */
