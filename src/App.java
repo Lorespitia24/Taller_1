@@ -105,7 +105,9 @@ public class App {
 		app.getFrecuenciaElemento();
 
 		//Punto 34
-		//Punto 35
+		app.getRotarElementos();
+
+		//Punto 35 
 		app.getTablasMultiplicar();
 
 	}
@@ -173,7 +175,7 @@ public class App {
 		if (Integer.parseInt(input_numero_1) > Integer.parseInt(input_numero_2)) {
 			JOptionPane.showMessageDialog(null, (input_numero_1 + " es el numero mayor"));
 		}else if(Integer.parseInt(input_numero_1) == Integer.parseInt(input_numero_2)){
-			JOptionPane.showMessageDialog(null, ("El numero " + input_numero_1 +" y el numero "+ input_numero_2+ " son iguales"));
+			JOptionPane.showMessageDialog(null, ("El numero " + input_numero_1 +" y el numero "+ input_numero_2+ " son iguales")); 
 		}else {			
 			JOptionPane.showMessageDialog(null, (input_numero_2 + " es el numero mayor"));
 		}
@@ -201,7 +203,7 @@ public class App {
 	su tabla de multiplicar hasta el 10. */
 
 	public void getTablaMultiplicar(){
-		String input_tablaMultiplicar = JOptionPane.showInputDialog("Ingresa un numero entero:");
+		String input_tablaMultiplicar = JOptionPane.showInputDialog("Ingresa un numero entero :");
 		String tablaMultiplicar = "";
 		for (int i = 0; i <= 10; i++) {
 			tablaMultiplicar += "\n" + (input_tablaMultiplicar+" X "+i+" = "+ Integer.parseInt(input_tablaMultiplicar)*i); 
@@ -624,6 +626,32 @@ public class App {
 
 		/* 34.Rotación de elementos: Implementa un programa que rote los elementos de
 		un arreglo hacia la izquierda o la derecha una cierta cantidad de posiciones. */
+
+		public void getRotarElementos(){
+			String input_numero = JOptionPane.showInputDialog("Ingresa el numero de veces para rotar:");
+			int []arreglo_numeros = {40,90,21,5,60};
+			String datosIniciales = "";
+			String datosfinales ="";
+		
+			int numeroRota = Integer.parseInt(input_numero);
+		 
+			  for (int i = 0; i < numeroRota; i++) {
+				datosIniciales += arreglo_numeros[i] +" ";
+			  }
+			  
+			  for (int i = numeroRota; i < arreglo_numeros.length; i++) {
+				  datosfinales += arreglo_numeros[i] + " ";
+			}
+		
+			datosfinales += datosIniciales;
+			String []arrerglo_final = datosfinales.split(" ");
+			datosIniciales = "";
+			for (int i = 0; i < arrerglo_final.length; i++) {
+				datosIniciales += arreglo_numeros[i] + " ";
+				System.out.println(arrerglo_final[i]);
+			}
+			JOptionPane.showMessageDialog(null, "Arreglo inicial \n " + datosIniciales + "\n Arreglo Final \n " + datosfinales);
+		   }
 
 		/* 35.Tabla de multiplicar: Crea un programa que imprima las tablas de multiplicar
 		del 1 al 10. Usa para esto una matriz */
